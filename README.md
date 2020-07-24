@@ -4,9 +4,9 @@ This script uses a Tor proxy to download YouTube videos using the [youtube-dl](h
 This will allow you to circumvent the download restrictions of YouTube for downloading large datasets.
 
 ## Requirements
-> Python 3.7
-youtube-dl
-tor
+1. > Python 3.7 
+2. youtube-dl 
+3. tor 
 
 ## Setup Tor
 You must first download and configure [Tor](https://www.torproject.org/) to run on commandline.

@@ -11,26 +11,40 @@ This will allow you to bypass download restrictions of YouTube for downloading l
 ## Setup Tor
 You must first download and configure [Tor](https://www.torproject.org/) to run on commandline.
 
-```brew install tor``` (MacOS)
-```sudo apt-get install tor``` (Linux)
+(MacOS)
+```
+brew install tor
+```
+(Linux)
+```
+sudo apt-get install tor
+```
 
 Once Tor has installed you must copy the example ```torrc``` configuration file.
 
-```cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc```
+```
+cp /usr/local/etc/tor/torrc.sample /usr/local/etc/tor/torrc
+```
 
 Create a password to access the local Tor proxy (remember this password for later) using:
 
-```tor --hash-password **your_password_here**```
+```
+tor --hash-password **your_password_here**
+```
 
 Copy the hash output from the terminal (it should look like this: ```16:E3EAD3E61428CHSO20EA72221528EE489BDD9D21E937331E1D810694B2```)
 
 Edit the ```torrc``` file:
 
-```sudo nano /usr/local/etc/tor/torrc```
+```
+sudo nano /usr/local/etc/tor/torrc
+```
 
 Locate the line ```#HashedControlPassword```, remove the comment mark (#) and paste in the output from the previous step. The line should now look like:
 
-```HashedControlPassword 16:E3EAD3E61428CHSO20EA72221528EE489BDD9D21E937331E1D810694B2```
+```
+HashedControlPassword 16:E3EAD3E61428CHSO20EA72221528EE489BDD9D21E937331E1D810694B2
+```
 
 Remove the comment mark (#) from the ```ControlPort``` line.
 ```
@@ -44,7 +58,9 @@ Congrats - you're ready to start running your Tor proxy.
 ## Starting Tor
 You must start the Tor proxy before you run the python script. To start the Tor proxy, run:
 
-```tor```
+```
+tor
+```
 
 ## Config Setup
 Create a ```config.json``` file by copying and renaming the ```config.example.json```.
@@ -76,13 +92,17 @@ Files will be downloaded as ```.mp4``` format.
 
 ### Dataset.csv
 Each line should be a new YouTube ID found at the end of a youtube link i.e. https://www.youtube.com/watch?v=dQw4w9WgXcQ (dQw4w9WgXcQ - YouTube Id)
+
 ```
 nQPXu-T9uWc
 bX2KCrEAc5w
 ```
 
 ## Running
-Start the script using ```python downloader.py```
+Start the script using 
+```
+python downloader.py
+```
 
 ## FAQ
 ### SocketError

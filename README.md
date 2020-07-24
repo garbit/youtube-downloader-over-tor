@@ -1,14 +1,14 @@
-#YouTube Downloader over Tor Proxy
+# YouTube Downloader over Tor Proxy
 This script uses a Tor proxy to download YouTube videos using the [youtube-dl](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme) command line tool.
 
 This will allow you to circumvent the download restrictions of YouTube for downloading large datasets.
 
-##Requirements
+## Requirements
 > Python 3.7
 youtube-dl
 tor
 
-##Setup Tor
+## Setup Tor
 You must first download and configure [Tor](https://www.torproject.org/) to run on commandline.
 
 ```brew install tor``` (MacOS)
@@ -56,12 +56,12 @@ Create a ```config.json``` file by copying and renaming the ```config.example.js
 }
 ```
 
-###Verbose logging
+### Verbose logging
 If you find you're having issues running the tool, enable youtube-dl verbose logging to see what the issue is.
 
 You can do this by editing the ```config.json``` and changing the ```verbose_logging``` to ```[True/False]```
 
-##Managing your dataset
+## Managing your dataset
 The script uses three files (below) to manage the state of downloading your dataset.
 
 | File                      | Description                                                             |
@@ -74,19 +74,19 @@ Start by adding YouTube Ids to the ```dataset.csv``` file. This file will be use
 
 Files will be downloaded as ```.mp4``` format.
 
-###Dataset.csv
+### Dataset.csv
 Each line should be a new YouTube ID found at the end of a youtube link i.e. https://www.youtube.com/watch?v=dQw4w9WgXcQ (dQw4w9WgXcQ - YouTube Id)
 ```
 nQPXu-T9uWc
 bX2KCrEAc5w
 ```
 
-##Running
+## Running
 Start the script using ```python downloader.py```
 
-##FAQ
-###SocketError
+## FAQ
+### SocketError
 ```SocketError: [Errno 61] Connection refused``` - Check that you have Tor running and configured correctly. This is due to either tor not running, incorrect password, or ControlPort hasn't been commented out.
 
-###IncorrectPassword
+### IncorrectPassword
 ```IncorrectPassword: Authentication failed: Password did not match HashedControlPassword value from configuration``` - Check that your script is using the plain text password that you set when you configured the Tor password (see above)
